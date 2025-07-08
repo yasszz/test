@@ -17,7 +17,7 @@ PubSubClient client(espClient);
 
 // GPIOs
 const int SWITCH_PIN = 34;
-const int LED_PIN = 2;  // Onboard LED on many ESP32 boards
+const int LED_PIN = 4;  // Onboard LED on many ESP32 boards
 
 // Debounce variables
 bool lastSwitchReading = HIGH;
@@ -45,6 +45,7 @@ void callback(char* topic, byte* message, unsigned int length) {
   Serial.print("📥 Message arrived [");
   Serial.print(topic);
   Serial.print("]: ");
+
 
   String msg;
   for (unsigned int i = 0; i < length; i++) {
