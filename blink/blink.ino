@@ -1,5 +1,5 @@
 // Define LED pin
-const int ledPin = 4; // GPIO4
+const int ledPin =4 ; // GPIO4
 void setup() {
   // Initialize the LED pin as output
   pinMode(ledPin, OUTPUT);

@@ -82,7 +82,7 @@ void handleSW6() {
 // -- Independent LED control based on current states --
 
 void updateRedLED(unsigned long now) {
-  if (red_on && now - lastRedToggle >= 100) { // 10Hz
+  if (red_on && now - lastRedToggle >= 50) { // 10Hz
     lastRedToggle = now;
     digitalWrite(RED_LED, !digitalRead(RED_LED));
   }
