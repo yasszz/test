@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 
 # --- Setup ---
-arduino = serial.Serial('COM4', 9600)
+arduino = serial.Serial('COM8', 9600)
 time.sleep(2)
 
 # --- Log File Setup ---
@@ -17,38 +17,24 @@ with open(html_log_path, 'w') as html_file:
     html_file.write("<tr><th>Time</th><th>Command</th><th>Response</th></tr>")
 
 # --- Logging Function ---
-
-def log(action):
+def log(cmd, response):
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    msg = f"[{timestamp}] {action}"
-    # - Plain text log
-    with open(txt_log_path, "a") as f:
-        f.write(msg + "\n")
-    # - HTML log
-    html_msg = f"<tr><td>{timestamp}</td><td>{action}</td></tr>\n"
-    try:
-        with open(html_log_path, "r") as f:
-            content = f.read()
-    except FileNotFoundError:
-        content = ""
-    if "<table" not in content:
-        with open(html_log_path, "w") as f:
-            f.write("<html><head><title>LED Action Log</title></head><body>\n")
-            f.write("<h2>LED Action Log</h2>\n")
-            f.write("<table border='1'><tr><th>Timestamp</th><th>Action</th></tr>\n")
-            f.write(html_msg)
-            f.write("</table></body></html>")
-    else:
-        new_content = content.replace("</table>", html_msg + "</table>")
-        with open(html_log_path, "w") as f:
-            f.write(new_content)
+
+    # Plain Text Log
+    with open(txt_log_path, 'a') as txt_file:
+        txt_file.write(f"[{timestamp}] Command: {cmd}, Response: {response}\n")
+
+    # HTML Log
+    with open(html_log_path, 'a') as html_file:
+        html_file.write(f"<tr><td>{timestamp}</td><td>{cmd}</td><td>{response}</td></tr>")
+
 # --- Arduino Command Function ---
 def send_command(cmd):
     arduino.write(cmd.encode())
     time.sleep(0.1)
     response = arduino.readline().decode().strip()
     print("Arduino response:", response)
-    log(cmd)
+    log(cmd, response)
 
 
 while True:
@@ -60,7 +46,7 @@ while True:
     else:
         response = "Invalid input (not sent to Arduino)"
         print(response)
-        log(cmd)
+        log(cmd, response)
 
 # --- Finish HTML log ---
 with open(html_log_path, 'a') as html_file:
