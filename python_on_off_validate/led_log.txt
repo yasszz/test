@@ -1,0 +1,25 @@
+[2025-07-23 14:23:47] Command: 1, Response: Firmware v1.0
+[2025-07-23 14:23:49] Command: 0, Response: LED ON
+[2025-07-23 14:23:56] Command: 1, Response: LED OFF
+[2025-07-23 14:23:58] Command: 0, Response: LED ON
+[2025-07-23 14:26:00] Command: 1, Response: Firmware v1.0
+[2025-07-23 14:26:02] Command: 0, Response: LED ON
+[2025-07-23 14:26:06] Command: 1, Response: LED OFF
+[2025-07-23 14:26:08] Command: 2, Response: Invalid input (not sent to Arduino)
+[2025-07-23 14:26:42] Command: 1, Response: Firmware v1.0
+[2025-07-23 14:26:44] Command: 0, Response: LED ON
+[2025-07-23 14:26:45] Command: 0, Response: LED OFF
+[2025-07-23 14:28:40] Command: 1, Response: Firmware v1.0
+[2025-07-23 14:28:42] Command: 2, Response: Invalid input (not sent to Arduino)
+[2025-07-23 14:28:44] Command: 1, Response: LED ON
+[2025-07-23 14:30:03] Command: 1, Response: Firmware v1.0
+[2025-07-23 14:30:05] Command: 0, Response: LED ON
+[2025-07-23 14:30:06] Command: 2, Response: Invalid input (not sent to Arduino)
+[2025-07-23 14:30:48] Command: 1, Response: Firmware v1.0
+[2025-07-23 14:31:37] Command: 0, Response: LED ON
+[2025-07-23 14:31:51] Command: 2, Response: Invalid input (not sent to Arduino)
+[2025-07-23 14:31:52] Command: 1, Response: LED OFF
+[2025-07-23 14:31:53] Command: 0, Response: LED ON
+[2025-07-23 14:31:54] Command: 2, Response: Invalid input (not sent to Arduino)
+[2025-07-23 14:31:55] Command: 0, Response: LED OFF
+[2025-07-23 14:31:56] Command: 3, Response: Invalid input (not sent to Arduino)
